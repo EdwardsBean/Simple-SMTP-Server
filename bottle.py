@@ -3249,7 +3249,7 @@ if __name__ == '__main__':
     sys.path.insert(0, '.')
     sys.modules.setdefault('bottle', sys.modules['__main__'])
 
-    host, port = (opt.bind or 'localhost'), 8080
+    host, port = (opt.bind or '0.0.0.0'), 8080
     if ':' in host:
         host, port = host.rsplit(':', 1)
 

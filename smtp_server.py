@@ -198,7 +198,7 @@ def home(pageNum=1):
 
 runServer = True
 
-server = SMTPServerThread(('127.0.0.1', 1130) )	#SMTP Server IP
+server = SMTPServerThread(('0.0.0.0', 25) )	#SMTP Server IP
 try:
 	if runServer:
 		print 'Starting server'
@@ -206,7 +206,7 @@ try:
 
 	print 'Starting bottle'
 	bottle.debug(True)
-	bottle.run(app, host='localhost', port=8080, reloader=(not runServer))
+	bottle.run(app, host='0.0.0.0', port=8080, reloader=(not runServer))
 except Exception, e:
 	print "Dead"
 	#raise e
